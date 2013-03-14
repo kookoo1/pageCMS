@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Vagrant LAMP
 ============
@@ -50,3 +51,7 @@ And like any other vagrant file you have SSH access with
 vagrant-lamp
 ============
 
+=======
+pageCMS
+=======
+>>>>>>> 8689476d63ea05be17f8536a60c68702bc3c34c3

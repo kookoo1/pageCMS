@@ -19,8 +19,10 @@ class Syntra_Controller_Plugin_Navigation extends Zend_Controller_Plugin_Abstrac
             $menu = new Zend_Navigation_Page_Mvc (
             
             array ('label' => $page['title'],
-                   'controller' => 'index',
-                    'params' => array('slug' =>$page['slug'],'lang' => $locale)));
+                   //'controller' => 'index',
+                    'route'  => 'page', // de route om mooiere URL te maken
+                    'params' => array('slug' =>$page['slug'],
+                                        'lang' => $locale)));
             
             $container->addPage($menu);
         }
