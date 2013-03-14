@@ -7,8 +7,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $front = $this->getResource('frontcontroller');
         $front->registerPlugin(new Syntra_Controller_Plugin_Translate());
         $front->registerPlugin(new Syntra_Controller_Plugin_Navigation());
-//        $front->registerPlugin(new Syntra_Auth_Acl());
-//        $front->registerPlugin(new Syntra_Auth_Auth());
+        $front->registerPlugin(new Syntra_Auth_Acl());
+        $front->registerPlugin(new Syntra_Auth_Auth());
     }
 
     public function _initDbAdapter() {
@@ -48,6 +48,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
                 ))); // unique naam
         $router->addRoute('page', new Zend_Controller_Router_Route(':lang/pagina/:slug', array(
                     'controller' => 'page',
+                    'action' => 'index'
+                ))); // unique naam
+        $router->addRoute('admin', new Zend_Controller_Router_Route(':admin/:controller/:action', array(
+                    'module' => 'admin',
+                    'controller' => 'index',
                     'action' => 'index'
                 ))); // unique naam
     }
