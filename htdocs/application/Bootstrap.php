@@ -39,11 +39,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
                     'action' => 'index'
                 ))); // unique naam
         $router->addRoute('login', new Zend_Controller_Router_Route(':lang/login', array(
-                    'controller' => 'users',
+                    'controller' => 'Users',
                     'action' => 'login'
                 ))); // unique naam
         $router->addRoute('logout', new Zend_Controller_Router_Route(':lang/logout', array(
-                    'controller' => 'users',
+                    'controller' => 'Users',
                     'action' => 'logout'
                 ))); // unique naam
         $router->addRoute('page', new Zend_Controller_Router_Route(':lang/pagina/:slug', array(
