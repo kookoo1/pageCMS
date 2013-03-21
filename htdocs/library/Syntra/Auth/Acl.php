@@ -12,7 +12,7 @@ class Syntra_Auth_Acl extends Zend_Controller_Plugin_Abstract {
         
         $roles = array('GUEST','USER','ADMIN');// uitlzen normaal DB!!! case sensitive!!!
         
-        $controllers = array('users','index','page','error','admin-index');
+        $controllers = array('Users','index','page','error','admin-index');
         
         
         foreach ($request as $role ) {
