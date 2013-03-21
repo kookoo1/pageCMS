@@ -31,8 +31,6 @@ class Syntra_Auth_Acl extends Zend_Controller_Plugin_Abstract {
         //$acl->allow('USER','Default-index');// user no acces to admin // dat werkt nog 
         $acl->allow('USER','Users');// user no acces to admin 
         
-        
-        
         Zend_Registry::set('Zend_Acl',$acl);
         
     }

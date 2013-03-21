@@ -29,7 +29,7 @@ class Syntra_Auth_Auth extends Zend_Controller_Plugin_Abstract {
         
             $redirector = Zend_Controller_Action_HelperBroker::getStaticHelper('redirector');
             //die ('hier');
-            //$redirector->gotoUrl('/nl_BE/login');
+            $redirector->gotoUrl('/nl_BE/login');
         }
 
 
@@ -42,7 +42,7 @@ class Syntra_Auth_Auth extends Zend_Controller_Plugin_Abstract {
             $identity = $auth->getIdentity();
             
             $usersModel = new Application_Model_Users();
-            $user = $usersModel->getUserByIdentity($indentity);
+            $user = $usersModel->getUserByIdentity($identity);
               
             $role = $user->role;
 

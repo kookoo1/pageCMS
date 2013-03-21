@@ -3,7 +3,7 @@
 class UsersController extends Zend_Controller_Action
 {
 
- public function init()
+    public function init()
     {
         /* Initialize action controller here */
     }
@@ -61,7 +61,18 @@ class UsersController extends Zend_Controller_Action
         }
     }
 
+    public function logoutAction()
+    {
+       Zend_Auth::getInstance()->clearIdentity();
+            $redirector = Zend_Controller_Action_HelperBroker::getStaticHelper('redirector');
+        $redirector->redirector('/nl_BE/login');
+
+    }
+
+
 }
+
+
 
 
 
