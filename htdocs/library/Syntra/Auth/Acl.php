@@ -15,7 +15,7 @@ class Syntra_Auth_Acl extends Zend_Controller_Plugin_Abstract {
         $controllers = array('Users','index','page','error','admin-index');
         
         
-        foreach ($request as $role ) {
+        foreach ($roles as $role ) {
             $acl->addRole($role);
         }
         
@@ -26,8 +26,10 @@ class Syntra_Auth_Acl extends Zend_Controller_Plugin_Abstract {
         
         
         $acl->allow('ADMIN');// acces to averything
-        $acl->allow('USER');// acces to everything
-        $acl->deny('USER','admin-index');// user no acces to admin 
+        $acl->deny('USER');// acces to everything
+        $acl->allow('USER','page');// user no acces to admin 
+        //$acl->allow('USER','Default-index');// user no acces to admin // dat werkt nog 
+        $acl->allow('USER','Users');// user no acces to admin 
         
         
         

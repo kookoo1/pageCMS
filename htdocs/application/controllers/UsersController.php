@@ -3,7 +3,7 @@
 class UsersController extends Zend_Controller_Action
 {
 
-    public function init()
+ public function init()
     {
         /* Initialize action controller here */
     }
@@ -15,49 +15,51 @@ class UsersController extends Zend_Controller_Action
 
     public function loginAction()
     {
-        // action body
+        $loginForm = new Application_Form_Login();
+        $this->view->form = $loginForm;
         
-        $loginForm = new Appliction_Form_Login();
-        $this->view->form->$loginForm;
-        
-        // dit altijd uitvoeren om een formulier uit te lzeen
-        if($this->getRequest()->getPost()) {
-            $postParams =$this->getRequest()->getPost();// $_POST
+        if ($this->getRequest()->getPost())
+        {
+            $postParams = $this->getRequest()->getPost(); // $_POST
             
-            if ($this->view->form->isValid($postParams)) {
-                
+            if ($this->view->form->isValid($postParams))
+            {
                 $params = $this->view->form->getValues();
                 
                 $auth = Zend_Auth::getInstance();
-                // meegeven welek database driver we gebruiken
+                
+                // meegeven welke database driver we gebruiken
                 $authAdapter = new Zend_Auth_Adapter_DbTable(Zend_Registry::get('db'));
                 
-                // alle gegevens 
+                // login
                 $authAdapter->setTableName('users')
                             ->setIdentityColumn('username')
                             ->setCredentialColumn('password')
                             ->setIdentity($params['login'])
                             ->setCredential($params['password']);
-                        
-                // hier login gaan uitvoeren
-                $result = $auth->authenticate($authAdapter);
-                //var_dump($result);
                 
-                if ($result->isValid()) {
+                // login uitvoeren
+                $result = $auth->authenticate($authAdapter);
+                
+                if ($result->isValid())
+                {
+                    //die('ingelogged');
+                    echo 'U bent ingelogged!';
+                }
+                else
+                {
+                    //die('fout');
                     
-                    echo 'U bent ingelogd';
-                } else {
-                    foreach ($result->getMessages() as $message) {
+                    // alle foutmeldingen weergeven op het scherm
+                    foreach ($result->getMessages() as $message)
+                    {
                         echo $message;
+                        echo '<br>';
                     }
                 }
-                
-                
             }
-            
         }
     }
-
 
 }
 

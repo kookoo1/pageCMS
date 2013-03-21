@@ -16,21 +16,21 @@ class Application_Form_Login extends Zend_Form {
        $this->setAttrib('enctype','multipart/form-data');
        
        $this->addElement(new Zend_Form_Element_Text('login', array(
-           'label'=> 'login_lbl',
-           'filters'=>array('stringTrim'),
-           'required' =>true
+           'label'      => 'login_lbl',
+           'filters'    =>array('stringTrim'),
+           'required'   =>true
        )));
        $this->addElement(new Zend_Form_Element_Text('password', array(
-           'label'=> 'pasword_lbl',
-           'filters'=>array('stringTrim'),
-           'required' =>true
+           'label'      => 'password_lbl',
+           'filters'    =>array('stringTrim'),
+           'required'   =>true
        )));
        
        $this->addElement(new Zend_Form_Element_Button('submit', array(
-           'type' => 'submit',
-           'value'=> 'submit_lbl',
-           'required' =>true,
-           'ignore' => false
+           'type'        => 'submit',
+           'value'       => 'submit_lbl',
+           'required'    =>'false',
+           'ignore'      => true
        )));
        
        
