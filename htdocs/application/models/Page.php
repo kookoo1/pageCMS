@@ -25,7 +25,8 @@ class Application_Model_Page extends Zend_Db_Table_Abstract
         $select = $this->select()
                 ->where('menu = ?',self::MENU_VISIBLE)
                 ->where('status =?',  self::STATUS_ONLINE)
-                ->where('locale =?',$locale);
+                ->where('locale =?',$locale)
+                ->order('sort');
         $result = $this->fetchAll($select);
         return $result;
     }
