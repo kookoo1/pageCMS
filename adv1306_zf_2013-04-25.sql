@@ -7,7 +7,7 @@
 #
 # Host: mediacampus.be (MySQL 5.5.9)
 # Database: adv1306_zf
-# Generation Time: 2013-04-25 17:15:03 +0000
+# Generation Time: 2013-04-25 19:44:46 +0000
 # ************************************************************
 
 
@@ -49,6 +49,21 @@ VALUES
 
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+# Dump of table producten
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `producten`;
+
+CREATE TABLE `producten` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `titel` varchar(75) DEFAULT NULL,
+  `omschrijving` varchar(75) DEFAULT NULL,
+  `prijs` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 # Dump of table translate
