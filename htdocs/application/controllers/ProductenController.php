@@ -11,7 +11,11 @@ class ProductenController extends Zend_Controller_Action {
     }
 
     public function clientAction() {
-        // action body
+        
+        $client = new Zend_Soap_Client('http://192.168.33.95/producten/server?wsdl');
+        $client->setSoapVersion(SOAP_1_1); // nromaal is het 1.2 , voor zend 1.2
+        $client->addProducts('titel','omschrijving',15);
+        
     }
 
     public function serverAction() {
