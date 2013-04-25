@@ -2,12 +2,12 @@
 
 
 <!-- tweed werkt zonder routes -->
-<p><a href="<?= $this->url(array('controller' =>'page',
+<p><a href="<?php echo $this->url(array('controller' =>'page',
         'action' => 'index',
     'params' => array('slug' => 'producten' , 'lang' => 'nl_BE')
         )); ?>">Ga naar producten</a></p>
 
 
 <!-- derde is de beste manier,  als de route -->
-<p><a href="<?= $this->url(array('slug' => 'producten',
+<p><a href="<?php echo $this->url(array('slug' => 'producten',
         'lang' => 'nl_BE'), 'page'); ?>">Ga naar producten</a></p>

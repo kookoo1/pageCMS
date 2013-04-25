@@ -6,7 +6,7 @@
         <div id="container"">
             
             <header>
-                <h1><?= $this->translate('text_header'); ?></h1>
+                <h1><?php echo $this->translate('text_header'); ?></h1>
             </header>
             
             <nav>
@@ -17,7 +17,7 @@
                 </ul>
                 -->
                 
-                <?= $this->navigation()->menu(); ?>
+                <?php echo $this->navigation()->menu(); ?>
             </nav>
             <section>
                 <article>
