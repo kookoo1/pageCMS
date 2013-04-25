@@ -17,7 +17,7 @@ class Syntra_Controller_Plugin_Navigation extends Zend_Controller_Plugin_Abstrac
         );
         $backendoptions = array(
 //            'cache_dir' => realpath('/cache')  // ophalen van volldige path tem public html ==> hiermee werkt op ieder systeem
-            'cache_dir' => APPLICATION_PATH.('/../cache')  // ophalen van volldige path tem public html ==> hiermee werkt op ieder systeem
+            'cache_dir' => APPLICATION_PATH . '/../cache'  // ophalen van volldige path tem public html ==> hiermee werkt op ieder systeem
         );
 
         $cache = Zend_Cache::factory('Core', 'File', $frontendoptions, $backendoptions);
@@ -48,14 +48,13 @@ class Syntra_Controller_Plugin_Navigation extends Zend_Controller_Plugin_Abstrac
                 $container->addPage($menu);
             }
 
-            $cache->save($container,'navigation');
-            
+            $cache->save($container, 'navigation');
         } else {
-            
+
             $container = $result;
-            echo 'we zitten inde cache';
+            //echo 'we zitten inde cache';
         }
-        
+
         Zend_Registry::set('Zend_Navigation', $container);
     }
 

@@ -8,8 +8,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $front = $this->getResource('frontcontroller');
         $front->registerPlugin(new Syntra_Controller_Plugin_Translate()); // => library/Syntra/Controller/Plugin/Translate.php
         $front->registerPlugin(new Syntra_Controller_Plugin_Navigation());
-        $front->registerPlugin(new Syntra_Auth_Acl());
-        $front->registerPlugin(new Syntra_Auth_Auth());
+        //$front->registerPlugin(new Syntra_Auth_Acl());
+        //$front->registerPlugin(new Syntra_Auth_Auth());
     }
 
     public function _initDbAdapter ()
